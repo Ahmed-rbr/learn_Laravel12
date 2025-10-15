@@ -22,7 +22,7 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
   <x-navLink   href="/"  :active="request()->is('/')" >Home</x-navLink>
-              <x-navLink href="/about" :active="request()->is('about')" >About</x-navLink>
+              <x-navLink href="/jobs" :active="request()->is('jobs')" >Jobs</x-navLink>
               <x-navLink href="/contact" :active="request()->is('contact')"  >Contact</x-navLink>
             </div>
           </div>
@@ -68,8 +68,8 @@
     <el-disclosure id="mobile-menu" hidden class="block md:hidden">
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
      <x-navLink   href="/"  :active="request()->is('/')" >Home</x-navLink>
-              <x-navLink href="/about" :active="request()->is('about')" >About</x-navLink>
-              <x-navLink href="/contact" :active="request()->is('contact')"  >Contact</x-navLink>
+              <x-navLink href="/jobs" :active="request()->is('jobs')" >Jobs</x-navLink>
+              <x-navLink href="/contact"  :active="request()->is('contact')"  >Contact</x-navLink>
             </div>
       <div class="border-t border-white/10 pt-4 pb-3">
         <div class="flex items-center px-5">
