@@ -10,4 +10,12 @@ class Job extends Model{
   protected $table='job_listings';
   protected $fillable=['title','salary'];
 
+  public function employer(){
+    return $this->belongsTo(Employer::class);
+  }
+  public function tags(){
+    //if we have table with the same name laravel will auto look at it to prevent this we give here to forigenpivotkey and in the model we give the relativepivotkey
+    return $this->belongsToMany(Tag::class,foreignPivotKey: 'job_listing_id');
+  }
 }
+
