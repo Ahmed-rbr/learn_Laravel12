@@ -24,6 +24,8 @@
   <x-navLink   href="/"  :active="request()->is('/')" >Home</x-navLink>
               <x-navLink href="/jobs" :active="request()->is('jobs')" >Jobs</x-navLink>
               <x-navLink href="/contact" :active="request()->is('contact')"  >Contact</x-navLink>
+                          <x-navLink href="/contact"  :active="request()->is('contact')"  >Contact</x-navLink>
+
             </div>
           </div>
         </div>
@@ -70,7 +72,10 @@
      <x-navLink   href="/"  :active="request()->is('/')" >Home</x-navLink>
               <x-navLink href="/jobs" :active="request()->is('jobs')" >Jobs</x-navLink>
               <x-navLink href="/contact"  :active="request()->is('contact')"  >Contact</x-navLink>
+                                     <x-navLink href="/jobs/create"  :active="request()->is('jobs/create')"  >create</x-navLink>
+
             </div>
+
       <div class="border-t border-white/10 pt-4 pb-3">
         <div class="flex items-center px-5">
           <div class="shrink-0">
