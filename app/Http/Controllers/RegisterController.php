@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
@@ -14,24 +16,18 @@ class RegisterController extends Controller
     }
 
      public function store(){
-request()->validate([
+$attributes=request()->validate([
     'first_name'=>['required','min:5', 'max:30'],
     'last_name'=>['required','min:5', 'max:30'],
-    'email'=>['required','email'],
-    'password'=>['required', 'min:8'],
-    'password_confirmation'=>['required']
-    
+    'email'=>['required','email','max:254'],
+    'password'=>['required',Password::min(6),'confirmed'],
+    //laravel will look for field with name password_confirmation
+ //if this done it will return an $validationAttributes  
 ]);
-User::create([
-       'first_name'=>request('first_name'),
-    'last_name'=>request('last_name'),
-    'email'=>request('email'),
-    'password'=>request('password'),
-    
+$user=User::create($attributes);
 
-]);
-
-return redirect('/');
+Auth::login($user);
+return redirect('/jobs');
 
     }
 }
