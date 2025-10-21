@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Job;
+use App\Models\User;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator as PaginationPaginator;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,5 +26,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Model::preventLazyLoading();
-PaginationPaginator::useTailwind();    }
+PaginationPaginator::useTailwind();   
+
+//     Gate::define('edit-job',function(User $user,Job $job){
+       
+//        //check if the current user have the same id to 
+// //the user how created the post
+// return $job->employer->user->is($user);
+       
+//         });
+}
 }

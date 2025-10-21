@@ -1,6 +1,6 @@
 <x-layout>
      <x-slot:heading>
-        About Page
+        Jobs Page
 </x-slot:heading>
 <div class="flex flex-col gap-5  ">
 

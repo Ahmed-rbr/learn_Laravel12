@@ -5,6 +5,8 @@
 
 <h1>Job Title: {{$job->title}}</h1>
 <h1>Job Salary: {{$job->salary}}</h1>
+@can('edit',$job)
+  
 
 <div class="flex gap-5 p-4">
   <a class="bg-blue-500 px-6 py-1 rounded" href="/jobs/{{$job->id}}/edit">Edit</a>
@@ -16,4 +18,5 @@
 
   </form>
 </div>
+@endcan
 </x-layout>
