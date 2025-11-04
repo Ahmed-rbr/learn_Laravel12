@@ -4,8 +4,11 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Jobs\TranslateJob;
+use App\Mail\JobPosted;
 use App\Models\Job;
 use Illuminate\Support\Facades\Route;
+
+
 
 
 Route::view('/', 'home');
