@@ -23,7 +23,9 @@
             <div class="ml-10 flex items-baseline space-x-4">
   <x-navLink   href="/"  :active="request()->is('/')" >Home</x-navLink>
               <x-navLink href="/jobs" :active="request()->is('jobs')" >Jobs</x-navLink>
-              <x-navLink href="/contact" :active="request()->is('contact')"  >Contact</x-navLink>
+@auth
+  <x-navLink href="/jobs/create" :active="request()->is('jobs/create')">Create Job</x-navLink>
+@endauth
                           <x-navLink href="/contact"  :active="request()->is('contact')"  >Contact</x-navLink>
 
             </div>
@@ -56,7 +58,9 @@
      <x-navLink   href="/"  :active="request()->is('/')" >Home</x-navLink>
               <x-navLink href="/jobs" :active="request()->is('jobs')" >Jobs</x-navLink>
               <x-navLink href="/contact"  :active="request()->is('contact')"  >Contact</x-navLink>
-                                     <x-navLink href="/jobs/create"  :active="request()->is('jobs/create')"  >create</x-navLink>
+@auth
+  <x-navLink href="/jobs/create" :active="request()->is('jobs/create')">Create Job</x-navLink>
+@endauth
 @guest
       <x-navLink href='/login' :active="request()->is('login')">Log in</x-navLink>
                                          <x-navLink href='/register' :active="request()->is('register')">Register</x-navLink>
